@@ -7,7 +7,6 @@ import { Cart } from './Components/Cart';
 import { OrderHistory } from './Components/OrderHistory'; 
 import { ProductDetails } from './Components/ProductDetails'; 
 import { useState } from 'react';
-import { Login } from './Components/Login';
 
 function App() {
   const [cart,setCart] = useState([]);
@@ -18,7 +17,6 @@ function App() {
       <div className='container'>
         <Routes>
         <Route path='/' element={<Home cart={cart} setCart={setCart}/>}></Route>
-        <Route path='/login' element={<Login />} /> 
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>}></Route>
         <Route path='/orders' element={<OrderHistory />}></Route>
         <Route path='/product/:id' element={<ProductDetails cart={cart} setCart={setCart} />}></Route>

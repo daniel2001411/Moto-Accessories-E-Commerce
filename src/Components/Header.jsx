@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from './AuthContext';
 import '../Styles/Header.css';
 
 export const Header = ({ cart }) => {
-    const { user, logout } = useAuth();
     
     return (
         <header className="navbar">
@@ -24,22 +22,6 @@ export const Header = ({ cart }) => {
                         </Link>
                     </li>
                     <li><Link to="/orders">My Orders</Link></li>
-                    {user ? (
-                        <>
-                            <li><span className="welcome">Welcome, {user.name}</span></li>
-                            <li>
-                                <button onClick={logout} className="logout-btn">
-                                    Logout
-                                </button>
-                            </li>
-                        </>
-                    ) : (
-                        <li>
-                            <Link to="/login" className="login-btn">
-                                Login
-                            </Link>
-                        </li>
-                    )}
                 </ul>
             </nav>
         </header>

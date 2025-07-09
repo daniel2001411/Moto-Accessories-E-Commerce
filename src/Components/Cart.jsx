@@ -44,7 +44,7 @@ const decreaseQuantity = (productId) => {
     const existingOrders = JSON.parse(localStorage.getItem('orders') || '[]');
     localStorage.setItem('orders', JSON.stringify([...existingOrders, order]));
         alert(`Payment of Rs: ${total} successful!`);
-        setCart([]); // Clear the cart after payment
+        setCart([]); 
     }
 
     return (
